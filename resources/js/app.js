@@ -13,6 +13,33 @@
 // //Write your code below this line:
 
 
+function genBuzz(lowerLimit, upperLimit) {
+    for(let num = lowerLimit; num <= upperLimit; num++) {
+        if(num % 3 === 0) {
+            console.log('Gen')
+        } else if(num % 5 === 0) {
+            console.log('Buzz')
+        } else if(num % 5 === 0 && num % 3 === 0){
+            console.log('GenBuzz')
+        }
+    }
+    typeof(lowerLimit) === 'number'
+    typeof(upperLimit) ==='number'
+
+    if (typeof(lowerLimit) != 'number'){
+        console.log(`input must be a number`)
+    }
+    if (typeof(upperLimit) != 'number'){
+        console.log(`input must be a number`)
+    }
+    if (lowerLimit > upperLimit){
+        console.log(`please input lower numbers and upper numbers correctly`)
+    }
+    
+}
+
+genBuzz(1,10)
+
 
 
 // 2. Leap Year
@@ -35,9 +62,15 @@
 
 //Write your code below this line:
 
+function isLeapYear (year) {
+    if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) {
+        console.log(`${year} is leap year`);
+    }else {
+        console.log(`${year} is not a leap year`)
+    }
+}
 
-
-
+isLeapYear(2100)
 
 // 3. Perfect Square
 
@@ -53,3 +86,21 @@
 // You may not use the built-in Math.sqrt method
 
 //Write your code below this line:
+
+// 
+
+function perfectSquare (number) {
+    for (let i = 1; i * i <= number; i++) {
+        if ((number % i == 0) && (Math.floor(number / i) == i)) {
+            return true
+        } 
+    }
+    return false
+}
+
+let num = 39
+if (num == 0 || perfectSquare(num)){
+    console.log(true)
+} else {
+    console.log(false)
+}
